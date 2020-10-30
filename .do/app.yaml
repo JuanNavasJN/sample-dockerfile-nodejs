@@ -1,0 +1,16 @@
+name: sample-dockerfile-nodejs
+region: fra
+services:
+    - dockerfile_path: Dockerfile
+      envs:
+          - key: NODE_ENV
+            scope: RUN_AND_BUILD_TIME
+            value: production
+      github:
+          branch: master
+          deploy_on_push: true
+          repo: JuanNavasJN/sample-dockerfile-nodejs
+      http_port: 3000
+      instance_count: 1
+      instance_size_slug: basic-xxs
+      name: sample-dockerfile-nodejs
