@@ -15,6 +15,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+RUN npm run build
+
 ENV HOST=0.0.0.0 PORT=3000 NODE_ENV=production
 
 EXPOSE 3000
